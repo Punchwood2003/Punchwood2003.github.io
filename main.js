@@ -10,6 +10,6 @@ const navBar = document.querySelector('nav');
  * icon and the times symbol.
  */
 menuIcon.addEventListener('click', () => {
-    menuIcon.classList.toggle('change');
+    menuIcon.classList.toggle('times');
     navBar.classList.toggle('nav-hidden');
 });

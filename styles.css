@@ -1,3 +1,10 @@
+/**
+ * Unless otherwise stated, the following styles are
+ * concerning how things will look when viewed from 
+ * a desktop computer rather than a smaller mobile device.
+ */
+
+/* Styling for font, and dark theme */
 body {
     font-family: 'Roboto Mono', monospace;
     margin: 0;
@@ -6,6 +13,10 @@ body {
     color: #fff;
 }
 
+/* 
+ * Styling for header, including different background and
+ * special padding for different elements within the header
+ */
 header {
     background-color: #333;
     display: flex;
@@ -14,12 +25,14 @@ header {
     padding: 20px;
 }
 
+/* Styling for my name in the top left of the header */
 header h1 {
     margin: 0;
     color: #fff;
     padding-left: 20px;
 }
 
+/* Styling for nav elements contained within the header */
 header nav {
     display: flex;
     position: absolute;
@@ -27,30 +40,36 @@ header nav {
     right: 60px;
 }
 
+/* Styling for each of the individual navigation elements */
 header nav a {
     color: #fff;
     text-decoration: none;
     padding: 10px 20px;
 }
 
+/* Styling to change the color of the nav element being selected */
 header nav a:hover {
     background-color: #444;
 }
 
+/* Styling for the actual content of the page */
 main {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+/* In between each section, add a little bit of spacing */
 main section {
     margin: 50px 0;
 }
 
+/* Styling for each of the titles of the section in the main body */
 main h2 {
     margin-top: 0;
 }
 
+/* Styling for the footer of the website */
 footer {
     background-color: #333;
     color: #fff;
@@ -58,14 +77,15 @@ footer {
     text-align: center;
 }
 
-.menu-icon {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: inline-block;
-    cursor: pointer;
+/* Style for when the nav bar elements should be on the screen */
+.nav-visible {
+    transition: 0.5s;
+    transform: translateX(-10px);
+    opacity: 1;
+    visibility: visible;
 }
 
+/* Style for when the nav bar elements should not be on the screen */
 .nav-hidden {
     transition: 0.5s;
     transform: translateX(10px);
@@ -73,11 +93,13 @@ footer {
     visibility: hidden;
 }
 
-nav {
-    transition: 0.5s;
-    transform: translateX(-10px);
-    opacity: 1;
-    visibility: visible;
+/* Styling for the hamburger icon for the menu button */
+.menu-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: inline-block;
+    cursor: pointer;
 }
 
 /* Style for all bars of the navigation bar */
@@ -90,21 +112,30 @@ nav {
 }
 
 /* On click, rotate the top bar 45 degrees counter clockwise */
-.change .bar:nth-child(1) {
+.times .bar:nth-child(1) {
     transform: rotate(-45deg) translate(-7.5px, 7.5px);
 }
 
 /* On click, remove the second bar */
-.change .bar:nth-child(2) {
+.times .bar:nth-child(2) {
     opacity: 0;
 }
 
 /* On click, rotate the bottom bar 45 degrees clockwise */
-.change .bar:nth-child(3) {
+.times .bar:nth-child(3) {
     transform: rotate(45deg) translate(-7.5px, -7.5px);
 }
 
-@media (max-width: 768px) {
+/** 
+ * The following styles are how the website should look different
+ * when being viewed from a mobile device compared to a desktop
+ */
+@media (max-width: 35em) {
+
+    /* 
+     * Rather than displaying all of the elements horizontally, 
+     * arrange them vertically instead (on overflow) 
+     */
     header {
         flex-direction: column;
     }
