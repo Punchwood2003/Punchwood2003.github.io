@@ -22,6 +22,9 @@ header h1 {
 
 header nav {
     display: flex;
+    position: absolute;
+    top: 20px;
+    right: 60px;
 }
 
 header nav a {
@@ -53,6 +56,52 @@ footer {
     color: #fff;
     padding: 20px;
     text-align: center;
+}
+
+.menu-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.nav-hidden {
+    transition: 0.5s;
+    transform: translateX(10px);
+    opacity: 0;
+    visibility: hidden;
+}
+
+nav {
+    transition: 0.5s;
+    transform: translateX(-10px);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Style for all bars of the navigation bar */
+.bar {
+    width: 35px;
+    height: 5px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* On click, rotate the top bar 45 degrees counter clockwise */
+.change .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-7.5px, 7.5px);
+}
+
+/* On click, remove the second bar */
+.change .bar:nth-child(2) {
+    opacity: 0;
+}
+
+/* On click, rotate the bottom bar 45 degrees clockwise */
+.change .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-7.5px, -7.5px);
 }
 
 @media (max-width: 768px) {
